@@ -1,0 +1,7 @@
+{
+  "name": "Royal Odontologia",
+  "description": "Clínica odontológica de excelência em Aparecida de Goiânia, oferecendo implantes, facetas, ortodontia e estética dental.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
