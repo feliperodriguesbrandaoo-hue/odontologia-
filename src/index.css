@@ -10,6 +10,22 @@
   --color-paper: #FDFCFB; /* Warm off-white */
 }
 
+.gold-mirror-text {
+  background: linear-gradient(
+    to bottom,
+    #BF953F 22%,
+    #FCF6BA 45%,
+    #B38728 50%,
+    #FBF5B7 55%,
+    #AA771C 78%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,0.3));
+}
+
 @keyframes pulse-slow {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.02); }

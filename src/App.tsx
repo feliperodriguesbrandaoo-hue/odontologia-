@@ -170,20 +170,32 @@ export default function App() {
   return (
     <div className="min-h-screen font-sans selection:bg-royal-gold/30 bg-paper text-royal-blue overflow-x-hidden">
       {/* Navigation */}
-      <nav className="absolute top-0 w-full z-50 bg-transparent border-none">
+      <nav className="absolute top-0 w-full z-50 bg-royal-blue shadow-md border-none">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="flex justify-between h-24 items-center">
-            <div className="flex items-center gap-4 opacity-0 pointer-events-none">
-              {/* Logo removed as requested */}
+          <div className="flex justify-between h-20 items-center relative">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-white shadow-sm bg-white">
+                <img 
+                  src="https://i.postimg.cc/jdq5fcj2/unnamed-(1).jpg" 
+                  alt="Logo" 
+                  className="w-full h-full object-cover"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+            </div>
+
+            {/* Centered Name */}
+            <div className="absolute left-1/2 -translate-x-1/2">
+              <span className="text-lg md:text-3xl font-black tracking-tight gold-mirror-text uppercase whitespace-nowrap italic">Royal Odontologia</span>
             </div>
 
             {/* Desktop Menu */}
-            <div className="hidden md:flex items-center gap-12">
+            <div className="hidden md:flex items-center gap-8">
               {['Início', 'Tratamentos', 'Especialidades', 'Diferenciais', 'Contato'].map((item) => (
                 <a 
                   key={item}
                   href={`#${item.toLowerCase()}`} 
-                  className="text-royal-blue/60 hover:text-royal-blue font-medium text-sm tracking-wide transition-all luxury-underline"
+                  className="text-white/80 hover:text-royal-gold font-medium text-xs tracking-wide transition-all luxury-underline"
                 >
                   {item}
                 </a>
@@ -191,14 +203,14 @@ export default function App() {
               <a 
                 href="https://wa.me/5562981685668?text=Olá!%20Gostaria%20de%20marcar%20uma%20consulta,%20vim%20pelo%20site." 
                 target="_blank" 
-                className="bg-royal-blue text-white px-8 py-3 rounded-full font-bold text-sm hover:bg-royal-gold hover:text-royal-blue transition-all flex items-center gap-3"
+                className="bg-royal-gold text-royal-blue px-6 py-2 rounded-full font-bold text-xs hover:bg-white transition-all flex items-center gap-2"
               >
-                Agendar Agora
+                Agendar
               </a>
             </div>
 
             {/* Mobile Menu Button */}
-            <button className="md:hidden text-royal-blue p-2" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            <button className="md:hidden text-white p-2" onClick={() => setIsMenuOpen(!isMenuOpen)}>
               {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
           </div>
@@ -214,8 +226,16 @@ export default function App() {
               className="fixed inset-0 z-[100] bg-paper flex flex-col p-12"
             >
               <div className="flex justify-between items-center mb-20">
-                <div className="flex items-center gap-4 opacity-0 pointer-events-none">
-                  {/* Logo removed as requested */}
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-white shadow-sm bg-white">
+                    <img 
+                      src="https://i.postimg.cc/jdq5fcj2/unnamed-(1).jpg" 
+                      alt="Logo" 
+                      className="w-full h-full object-cover"
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
+                  <span className="text-sm font-bold tracking-widest text-royal-blue uppercase whitespace-nowrap">Royal Odontologia</span>
                 </div>
                 <button onClick={() => setIsMenuOpen(false)} className="text-royal-blue p-2">
                   <X size={32} />
@@ -272,12 +292,8 @@ export default function App() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="max-w-2xl pt-20 md:pt-0 mr-auto text-left flex flex-col items-start"
+            className="max-w-2xl pt-32 md:pt-40 mr-auto text-left flex flex-col items-start"
           >
-            <div className="inline-flex items-center px-4 py-2 bg-royal-blue/10 rounded-full mb-6 border border-royal-blue/20">
-              <span className="text-[10px] md:text-xs font-bold tracking-widest text-royal-blue uppercase whitespace-nowrap">Clínica Especializada Odontológica</span>
-            </div>
-            
             <h1 className="text-4xl md:text-7xl font-sans font-black text-royal-blue mb-6 tracking-tight uppercase leading-[1.1] drop-shadow-md">
               CONQUISTE O <br />
               <span className="relative inline-block">
@@ -324,7 +340,7 @@ export default function App() {
                 href="https://wa.me/5562981685668?text=Olá!%20Gostaria%20de%20marcar%20uma%20consulta,%20vim%20pelo%20site." 
                 className="group relative inline-flex items-center justify-center gap-3 bg-[#25D366] text-white px-8 py-4 rounded-xl font-black text-base overflow-hidden transition-all shadow-lg hover:scale-105 active:scale-95 animate-pulse-slow w-full sm:w-auto"
               >
-                <span className="relative z-10 uppercase tracking-widest">QUERO MEU TRATAMENTO</span>
+                <span className="relative z-10 uppercase tracking-widest">FAZER AGENDAMENTO</span>
                 <ChevronRight className="relative z-10 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
             </div>
@@ -719,7 +735,26 @@ export default function App() {
               { q: "O tratamento para enxaqueca dói?", a: "Não! Utilizamos técnicas minimamente invasivas e laserterapia para garantir o máximo conforto durante e após o procedimento." },
               { q: "Quanto tempo dura o tratamento?", a: "Cada caso é único, mas muitos pacientes sentem alívio imediato já nas primeiras sessões do nosso protocolo exclusivo." },
               { q: "A clínica aceita convênios?", a: "Trabalhamos no sistema de reembolso e atendimento particular VIP, garantindo a melhor tecnologia e tempo dedicado a você." },
-              { q: "Onde a clínica está localizada?", a: "Estamos localizados em Aparecida de Goiânia, em frente ao Colégio Irmã Angélica (ponto de referência), com fácil acesso e estacionamento privativo." }
+              { 
+                q: "Onde a clínica está localizada?", 
+                a: (
+                  <div className="space-y-4">
+                    <p>
+                      Estamos localizados na <strong>Av. Independência, Qd 26 LT. 10 Sala 02 - Jardim Ipiranga, Aparecida de Goiânia - GO</strong> (em frente ao Colégio Irmã Angélica).
+                    </p>
+                    <p>
+                      Contamos com fácil acesso e estacionamento privativo para sua comodidade.
+                    </p>
+                    <a 
+                      href="#contato" 
+                      className="inline-flex items-center gap-2 text-royal-blue font-bold hover:underline"
+                    >
+                      <MapPin className="w-4 h-4" />
+                      Ver mapa e informações detalhadas
+                    </a>
+                  </div>
+                )
+              }
             ].map((item, idx) => (
               <details key={idx} className="group bg-white rounded-3xl border border-royal-blue/5 overflow-hidden transition-all">
                 <summary className="flex items-center justify-between p-8 cursor-pointer list-none">
